@@ -66,6 +66,7 @@ class AttributesofnthDayForm(ModelForm):
 
 
 
+		
 
 class BisectYearsinCenturiesForm(ModelForm):
 
@@ -77,6 +78,7 @@ class BisectYearsinCenturiesForm(ModelForm):
 		fields = ['first_date_bisect_years_in_centuries', "second_date_bisect_years_in_centuries"]
 
 
+		
 
 
 class MonthsandDaystillthenextSpringEquinoxForm(ModelForm):
@@ -89,6 +91,7 @@ class MonthsandDaystillthenextSpringEquinoxForm(ModelForm):
 		fields = ['first_date_next_spring_equinox', "second_date_next_spring_equinox"]
 
 
+		
 
 
 class MonthsandDaystillthenextAutumnEquinoxForm(ModelForm):
@@ -102,8 +105,7 @@ class MonthsandDaystillthenextAutumnEquinoxForm(ModelForm):
 
 
 
-
-
+		
 
 class PeriodsbetweenDateswithTotalLunarEclipseForm(ModelForm):
 
@@ -142,6 +144,8 @@ class Find_the_difference_of_timezone_with_USA_Form(ModelForm):
 		fields = ['inTimeDelta_hours_diff', "inTZObject_name_diff", "datetime_instance_var_diff",]
 
 
+		
+		
 
 
 class Find_equivalent_with_timezone_Form(ModelForm):
@@ -173,8 +177,7 @@ class Find_difference_with_timezone_Form(ModelForm):
 
 
 
-
-
+		
 
 
 class Find_difference_of_timezone_from_UTC_Form(ModelForm):
@@ -200,6 +203,7 @@ class find_difference_between_two_timezones_Form(ModelForm):
 
 	
 	
+	
 class display_date_for_the_next_n_days_Form(ModelForm):
 
 	class Meta:
@@ -209,6 +213,7 @@ class display_date_for_the_next_n_days_Form(ModelForm):
 		fields = ['n_days', "year_for_date_n_days", "month_for_date_n_days" ]
 
 
+		
 		
 
 class attributes_of_time_equal_to_date_in_a_decade_Form(ModelForm):
@@ -252,6 +257,8 @@ class find_time_until_a_date_after_n_years_Form(ModelForm):
 
 
 		
+		
+		
 class calculate_date_and_time_until_next_solstice_Form(ModelForm):
 
 	class Meta:
@@ -261,6 +268,8 @@ class calculate_date_and_time_until_next_solstice_Form(ModelForm):
 		fields = ['next_solstice']
 
 
+		
+		
 
 class date_and_time_until_the_nth_day_in_the_next_n_years_Form(ModelForm):
 
@@ -293,31 +302,6 @@ class years_of_nth_century_have_more_than_n_days_with_attrs_Form(ModelForm):
 
 
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
