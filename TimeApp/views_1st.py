@@ -34,13 +34,3 @@ def welcome(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
