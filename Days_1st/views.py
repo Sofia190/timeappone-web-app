@@ -108,7 +108,6 @@ def view_days_till_a_date(request):
 
 
 
-
 def view_days_till_a_date_display_attributes(request):
 
 	if request.method == 'POST':
@@ -212,11 +211,7 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 
 
-
-
 def view_leap_years_in_a_decade(request):
-
-	# pass
 
 	if request.method == 'POST':
 
@@ -797,7 +792,6 @@ def find_the_equivalent_of_timezone_with_USA(request):
 
     
 
-	
 
 
 def find_the_difference_of_timezone_with_USA(request):
@@ -1328,7 +1322,6 @@ def display_date_for_the_next_n_days(request):
 
 				dl_aux = []
 
-				# dt_obj = date(2020, 10, 25)
 				dt_obj = timezone.now()
 
 				obj.pivot_value = dt_obj.day
@@ -1395,7 +1388,6 @@ def display_date_for_the_next_n_days(request):
 				obj.save()
 
 				form = display_date_for_the_next_n_days_Form()
-
 
 	
 	else:
@@ -1639,8 +1631,6 @@ def find_time_until_a_date_after_n_years(request):
 
 
 
-
-
 def calculate_date_and_time_until_next_solstice(request):
 
 
@@ -1765,7 +1755,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
     
 
 
-
 def find_which_years_of_nth_century_have_more_than_n_days_with_attrs(request):
 
 
@@ -1859,7 +1848,6 @@ def find_which_years_of_nth_century_have_more_than_n_days_with_attrs(request):
 
 
 	    
-
 
 
 def how_many_solstices_in_n_years_with_sum_attrs_even_number(request):
@@ -1981,8 +1969,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_even_number(request):
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-even-number.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
-
-
 
 
 
