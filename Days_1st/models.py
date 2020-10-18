@@ -183,6 +183,7 @@ class Day(models.Model):
 	date_for_the_next_n_days = models.TextField(default=0)
 
 
+	
 
 	first_year_in_a_decade_sum_attributes = models.IntegerField(default=0)
 
@@ -192,18 +193,14 @@ class Day(models.Model):
 
 	day_sum_attributes = models.IntegerField(default=0)
 
-
 	hour_sum_attributes = models.IntegerField(default=0)
 
 	minute_sum_attributes = models.IntegerField(default=0)
 
 	second_sum_attributes = models.IntegerField(default=0)
-
-
+	
 
 	dates_sum_attributes_result = models.TextField(default=0)
-
-
 
 
 
@@ -215,14 +212,12 @@ class Day(models.Model):
 	month_sum_attributes_in_a_century = models.IntegerField(default=0)
 
 	day_sum_attributes_in_a_century = models.IntegerField(default=0)
-
 	
 	hour_sum_attributes_in_a_century = models.IntegerField(default=0)
 
 	minute_sum_attributes_in_a_century = models.IntegerField(default=0)
 
 	second_sum_attributes_in_a_century = models.IntegerField(default=0)
-
 
 
 	dates_sum_attributes_in_a_century_result = models.TextField(default=0)
@@ -237,11 +232,11 @@ class Day(models.Model):
 	first_date_time_until = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 	second_date_time_until = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
 
-
 	days_until_result = models.IntegerField(default=0)
 
 	time_until_result = models.TextField(default=0)
 
+	
 
 	next_solstice = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime(2021, 12, 21, 10, 0, 0))
 
@@ -263,11 +258,11 @@ class Day(models.Model):
 	date_and_time_until_nth_day_in_the_next_n_years = models.TextField(default=0)
 
 
+	
 
 	first_year_of_nth_century_attributes = models.IntegerField(default=0)
 
 	second_year_of_nth_century_attributes = models.IntegerField(default=0)
-
 
 	n_days_attributes = models.IntegerField(default=0)
 
@@ -312,10 +307,6 @@ class Day(models.Model):
 	wsolsticel_odd_sum_count = models.IntegerField(default=0)
 
 	solsticel_odd_sum_count = models.IntegerField(default=0)
-
-
-
-
 
 
 
