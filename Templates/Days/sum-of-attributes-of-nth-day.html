@@ -1,0 +1,66 @@
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+                    {% if obj.nth_day_value < 1 and obj.nth_month_value < 1 %}
+
+                    <h6>Choose the day and month</h6>
+
+
+                    {% endif %}
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+					<p>Result: {{obj.date_to_sum_attributes_result}}</p>
+
+
+                    </div>
+                </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
