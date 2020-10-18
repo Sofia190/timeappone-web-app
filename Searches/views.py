@@ -12,8 +12,6 @@ from Days.models import Day
 
 
 
-
-
 def search_view(request):
 	query = request.GET.get('q', None)
 	user = None 
@@ -25,33 +23,6 @@ def search_view(request):
 		days = Day.objects.search(query=query)    #.all().search()
 		context['days'] = days
 	return render(request, 'Searches/view.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
