@@ -1279,9 +1279,7 @@ def find_difference_between_two_timezones(request):
 					obj.inTimeDelta_hours_to_search = 12
 
 
-
-
-
+					
 
 			print(latitude_longitude)
 
