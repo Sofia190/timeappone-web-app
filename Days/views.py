@@ -207,10 +207,8 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 
 
-
 def view_leap_years_in_a_decade(request):
 
-	# pass
 
 	if request.method == 'POST':
 
@@ -372,8 +370,6 @@ def view_leap_years_in_a_century(request):
 
 
 
-   	
-
 
 
 def view_sum_of_attributes_of_nth_day_in_a_year(request):
@@ -436,6 +432,7 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 	template_path = "Days/sum-of-attributes-of-nth-day.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -567,6 +564,7 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
 
     
 
+	
 
 
 def how_many_months_and_days_till_the_next_autumn_equinox(request):
@@ -700,7 +698,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 			else:
 
 				td = td + timedelta(days=5)
-
 
 
 
@@ -1015,8 +1012,6 @@ def find_difference_with_timezone(request):
 
 
 
-
-
 def find_difference_of_timezone_from_UTC(request):
 
 	if request.method == 'POST':
@@ -1145,7 +1140,6 @@ def find_difference_of_timezone_from_UTC(request):
     
 
 	
-
 
 
 
@@ -1830,8 +1824,6 @@ def find_which_years_of_nth_century_have_more_than_n_days_with_attrs(request):
 						if (sum(map(int, str(i.year))) + i.month + i.day == i.hour + i.minute + i.second):
 
 							print('Match found:', i)
-
-
 
 							yl.append(i.year)
 
