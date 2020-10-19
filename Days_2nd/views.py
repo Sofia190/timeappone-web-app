@@ -20,8 +20,6 @@ from geopy.geocoders import Nominatim
 # from datetime import timedelta, datetime, date  
 
 
-# from dateutil.relativedelta import relativedelta
-
 
 from.forms  import (DaysTillaDateForm, YearsWithAttributesEqualToaValueForm,
 
@@ -100,15 +98,13 @@ def view_days_till_a_date(request):
 
 			form = DaysTillaDateForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = DaysTillaDateForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
-
+	
 	template_path = "Days/days-till-a-date.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
@@ -146,14 +142,12 @@ def view_days_till_a_date_display_attributes(request):
 
 			form = DaysTillaDateForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = DaysTillaDateForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-a-date-display-attributes.html"
 
@@ -214,7 +208,6 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/attributes-equal-to-a-value.html"
 
@@ -225,10 +218,8 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 
 
-
 def view_leap_years_in_a_decade(request):
 
-	# pass
 
 	if request.method == 'POST':
 
@@ -277,18 +268,12 @@ def view_leap_years_in_a_decade(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				            
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
-
+				  
 				obj.bisect_years_count = count
 
 				obj.used_in_calculations_by_user = True
@@ -303,8 +288,7 @@ def view_leap_years_in_a_decade(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
-
+	
 	template_path = "Days/bisect-years-in-a-decade.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
@@ -316,7 +300,6 @@ def view_leap_years_in_a_decade(request):
 
 def view_leap_years_in_a_century(request):
 
-	# pass
 
 	if request.method == 'POST':
 
@@ -367,17 +350,12 @@ def view_leap_years_in_a_century(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years_in_century+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				           
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years_in_century+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
+
 
 				obj.bisect_years_count_in_century = count
 
@@ -393,17 +371,12 @@ def view_leap_years_in_a_century(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
-
 	template_path = "Days/bisect-years-in-a-century.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
 
 
 
-
-
-   	
 
 
 
@@ -432,13 +405,6 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 				dli = []
 
-				# d = date(obj.date_to_sum_attributes.year, obj.nth_month_value, obj.nth_day_value)
-
-				# dt = date(d*2)
-
-				# td = dt - d 
-
-				# obj.date_to_sum_attributes_days = dt.days
 
 				for i in dly:
 
@@ -470,7 +436,6 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/sum-of-attributes-of-nth-day.html"
 
@@ -482,8 +447,6 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
-
-	# pass
 
 	if request.method == 'POST':
 
@@ -534,17 +497,12 @@ def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 				        	if (i.year % 400) == 0:
 				        		obj.bisect_years_in_centuries+=(str(i.year)+ ", ")
 				        		count += 1
-				                # print("{0} is a leap year".format(i.year))
-				              
-				            # else:
-				            #     print("{0} is not a leap year".format(i.year))
+				           
 				        else:
-				            # print("{0} is a leap year".format(i.year))
 				            obj.bisect_years_in_centuries+=(str(i.year)+ ", ")
 
 				            count += 1
-				    # else:
-				    #     print("{0} is not a leap year".format(i.year))
+				   
 
 				obj.bisect_years_count_in_centuries = count
 
@@ -560,7 +518,6 @@ def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/bisect-years-in-centuries.html"
 
@@ -602,14 +559,12 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
 
 			form = MonthsandDaystillthenextSpringEquinoxForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = MonthsandDaystillthenextSpringEquinoxForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-the-next-spring-equinox.html"
 
@@ -650,14 +605,12 @@ def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
 			form = MonthsandDaystillthenextAutumnEquinoxForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = MonthsandDaystillthenextAutumnEquinoxForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/days-till-the-next-autumn-equinox.html"
 
@@ -755,7 +708,6 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 
 
-
 			print(str(obj.second_date_with_total_lunar_eclipse.month))
 			print(str(obj.second_date_with_total_lunar_eclipse.day))
 
@@ -774,19 +726,16 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 
 			form = PeriodsbetweenDateswithTotalLunarEclipseForm()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = PeriodsbetweenDateswithTotalLunarEclipseForm()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/periods-between-dates-with-total-lunar-eclipse.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
-
 
 
 
@@ -847,7 +796,6 @@ def find_the_equivalent_of_timezone_with_USA(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-the-equivalent-of-timezone-with-USA.html"
 
@@ -915,14 +863,12 @@ def find_the_difference_of_timezone_with_USA(request):
 
 			form = Find_the_difference_of_timezone_with_USA_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = Find_the_difference_of_timezone_with_USA_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-the-difference-of-timezone-with-USA.html"
 
@@ -930,7 +876,6 @@ def find_the_difference_of_timezone_with_USA(request):
 
     
 
-	
 
 
 
@@ -989,14 +934,12 @@ def find_equivalent_with_timezone(request):
 
 			form =  Find_equivalent_with_timezone_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form =  Find_equivalent_with_timezone_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-equivalent-with-timezone.html"
 
@@ -1059,21 +1002,17 @@ def find_difference_with_timezone(request):
 
 			form =  Find_difference_with_timezone_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form =  Find_difference_with_timezone_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/find-difference-with-timezone.html"
 	return render(request, template_path, {'form': form, "obj":obj, })
 
     
-
-
 
 
 
@@ -1192,14 +1131,12 @@ def find_difference_of_timezone_from_UTC(request):
 
 			form = Find_difference_of_timezone_from_UTC_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = Find_difference_of_timezone_from_UTC_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/difference-of-timezone-from-UTC.html"
 
@@ -1290,7 +1227,7 @@ def find_difference_between_two_timezones(request):
 				elif int(latitude_longitude[1]) in range(165, 180):
 					obj.inTimeDelta_hours = 12
 				
-			#########################################################################	#####################################################################
+			##############################################################################################################################################
 			
 
 
@@ -1365,14 +1302,12 @@ def find_difference_between_two_timezones(request):
 
 			form = find_difference_between_two_timezones_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form = find_difference_between_two_timezones_Form()
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/difference-between-two-timezones.html"
 
@@ -1404,7 +1339,6 @@ def display_date_for_the_next_n_days(request):
 
 				dl_aux = []
 
-				#dt_obj = date(2020, 10, 25)
 				dt_obj = timezone.now()
 
 				obj.pivot_value = dt_obj.day
@@ -1530,7 +1464,6 @@ def display_date_for_the_next_n_days(request):
 						if ((obj.n_days+obj.pivot_value) > 31):
 
 
-
 							for i in range(obj.pivot_value, obj.n_days+obj.pivot_value+1 - ((obj.n_days+obj.pivot_value)-31)):
 
 
@@ -1560,7 +1493,6 @@ def display_date_for_the_next_n_days(request):
 					else:
 
 				
-
 
 						if ((obj.n_days+obj.pivot_value) > 31) :
 
@@ -1605,7 +1537,6 @@ def display_date_for_the_next_n_days(request):
 
 				form = display_date_for_the_next_n_days_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 	
 	else:
@@ -1614,7 +1545,6 @@ def display_date_for_the_next_n_days(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/date-for-the-next-n-days.html"
 
@@ -1657,15 +1587,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 
 
-				# print(dl)
-
-				# print('\n')
-
-
-
-				# dt_obj = timezone.now()
-
-
 				for i in dl:
 
 				    dtl.append(i.replace(hour=obj.hour_sum_attributes, minute=obj.minute_sum_attributes,
@@ -1694,8 +1615,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 				form = attributes_of_time_equal_to_date_in_a_decade_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
-
 
 
 	
@@ -1705,7 +1624,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_decade(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/attributes-of-time-equal-to-date.html"
 
@@ -1748,15 +1666,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 
 
-				# print(dl)
-
-				# print('\n')
-
-
-
-				# dt_obj = timezone.now()
-
-
 				for i in dl:
 
 				    dtl.append(i.replace(hour=obj.hour_sum_attributes_in_a_century, minute=obj.minute_sum_attributes_in_a_century,
@@ -1785,7 +1694,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 				form = attributes_of_time_equal_to_date_in_a_century_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -1793,7 +1701,6 @@ def find_dates_with_attributes_of_time_equal_to_date_in_a_century(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/attributes-of-time-equal-to-date-in-a-century.html"
 
@@ -1858,7 +1765,6 @@ def find_time_until_a_date_after_n_years(request):
 
 				form = find_time_until_a_date_after_n_years_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -1866,7 +1772,6 @@ def find_time_until_a_date_after_n_years(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/time-until-a-date-after-n-years.html"
 
@@ -1919,7 +1824,6 @@ def calculate_date_and_time_until_next_solstice(request):
 
 			form = calculate_date_and_time_until_next_solstice_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 
 	else:
 
@@ -1927,7 +1831,6 @@ def calculate_date_and_time_until_next_solstice(request):
 
 	obj = Day.objects.last()
 
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/date-and-time-until-next-solstice.html"
 
@@ -1957,12 +1860,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				dt = datetime_function.now()
 
-				# datetime_function.now(tz=tzinfo_class.utc)
-
-				# obj.year_one_next_n_years = 2021
-
-				# obj.year_two_next_n_years = 2033
-
 
 				for i in range(obj.year_one_next_n_years, obj.year_two_next_n_years):
 				    dli.append(datetime_function(i, obj.month_next_n_years, obj.day_next_n_years))
@@ -1975,11 +1872,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				for i in dli:
 				    dtl.append(i.replace(hour=dt.hour, minute=dt.minute, second=dt.second))
-
-
-				# print(dtl)
-
-				# print('\n')
 
 
 
@@ -2000,7 +1892,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 				form = date_and_time_until_the_nth_day_in_the_next_n_years_Form()
 
-				# return render(request, "Days/days-till-a-date.html")
 
 		else:
 
@@ -2008,7 +1899,6 @@ def calculate_date_and_time_until_the_nth_day_in_the_next_n_years(request):
 
 		obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 		template_path = "Days/date-and-time-until-the-nth-day-in-the-next-n-years.html"
 
@@ -2105,7 +1995,6 @@ def find_which_years_of_nth_century_have_more_than_n_days_with_attrs(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/years-of-nth-century-have-more-than-n-days-with-attrs.html"
 
@@ -2231,7 +2120,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_even_number(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-even-number.html"
 
@@ -2356,7 +2244,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_odd_number(request):
 
 	obj = Day.objects.last()
 
-		# context_dictionary = {'form' : form,}
 
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-odd-number.html"
 
@@ -2383,44 +2270,6 @@ def view_calendar(request):
 
 
 			dtl = []
-
-
-			print("date",obj.date_one_calendar.year)
-
-			# if obj.date_two_calendar.year == obj.date_one_calendar.year:
-
-			#     for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
-
-
-			#         if m==4 or m==6 or m==9 or m==11:
-			#             for j in range(1, 31):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-			#         elif m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-			#             for j in range(1, 32):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-			#         else:
-			#             for j in range(1, 29):
-			#                 dtl.append(date(obj.date_one_calendar.year, m, j))
-
-
-			       
-
-			# else:
-
-			# 	for i in range(int(obj.date_one_calendar.year), int(obj.date_two_calendar.year)+1):  #2101  2201
-			# 	    for m in range(1, 13):
-			# 	    # for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
-			# 	        if m==4 or m==6 or m==9 or m==11:
-			# 	            for j in range(1, 31):
-			# 	                dtl.append(date(i, m, j))
-			# 	        elif m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-			# 	            for j in range(1, 32):
-			# 	                dtl.append(date(i, m, j))
-			# 	        else:
-			# 	            for j in range(1, 29):
-			# 	                dtl.append(date(i, m, j))
-
-
 
 
 
@@ -2532,12 +2381,11 @@ def view_calendar(request):
 
 
 
-				for i in range(int(obj.date_one_calendar.year+1), int(obj.date_two_calendar.year)+1):  #2101  2201
+				for i in range(int(obj.date_one_calendar.year+1), int(obj.date_two_calendar.year)+1):  
 
 					if i != obj.date_two_calendar.year:
 
 					    for m in range(1, 13):
-					    # for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
 					        if m==4 or m==6 or m==9 or m==11:
 					            for j in range(1, 31):
 					                dtl.append(date(i, m, j))
@@ -2604,7 +2452,6 @@ def view_calendar(request):
 
 			form = view_calendar_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 
 	
 	else:
@@ -2613,7 +2460,6 @@ def view_calendar(request):
 
 	obj = Day.objects.last()
 	
-	# context_dictionary = {'form' : form,}
 
 	template_path = "Days/calendar.html"
 
