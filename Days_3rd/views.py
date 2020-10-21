@@ -12,7 +12,6 @@ from datetime import timezone as tzinfo_class
 
 from django.utils import timezone
 
-
 import math
 
 import geopy
@@ -174,6 +173,7 @@ def view_days_till_a_date_display_attributes(request):
 
 
 
+
 def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 	
@@ -228,6 +228,7 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 	template_path = "Days/attributes-equal-to-a-value.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -393,6 +394,7 @@ def view_leap_years_in_a_century(request):
 
 
 
+
 def view_sum_of_attributes_of_nth_day_in_a_year(request):
 
 
@@ -453,6 +455,7 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 	template_path = "Days/sum-of-attributes-of-nth-day.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -538,6 +541,7 @@ def view_how_many_bisect_years_in_the_last_nth_centuries(request):
 
 
 
+
 def how_many_months_and_days_till_the_next_spring_equinox(request):
 
 
@@ -583,6 +587,7 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
     
 
 
+	
 
 def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
@@ -627,6 +632,7 @@ def how_many_months_and_days_till_the_next_autumn_equinox(request):
 	return render(request, template_path, {'form': form, "obj":obj, })
 
     
+	
     
 
 
@@ -715,7 +721,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 				td = td + timedelta(days=5)
 
 
-
+				
 
 			print(str(obj.second_date_with_total_lunar_eclipse.month))
 			print(str(obj.second_date_with_total_lunar_eclipse.day))
@@ -744,6 +750,7 @@ def what_period_between_years_with_total_lunar_eclipse(request):
 	template_path = "Days/periods-between-dates-with-total-lunar-eclipse.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -885,9 +892,11 @@ def find_the_difference_of_timezone_with_USA(request):
 
 	
 
+	
 def display_calculators_page_view(request):
 
 	return render(request, 'Days/page-with-calculators.html')
+
 
 
 
@@ -1780,6 +1789,7 @@ def find_time_until_a_date_after_n_years(request):
 
 
 
+
 def calculate_date_and_time_until_next_solstice(request):
 
 
@@ -2123,6 +2133,7 @@ def how_many_solstices_in_n_years_with_sum_attrs_even_number(request):
 
 
 
+
 def how_many_solstices_in_n_years_with_sum_attrs_odd_number(request):
 
 	if request.method == 'POST':
@@ -2240,6 +2251,7 @@ def how_many_solstices_in_n_years_with_sum_attrs_odd_number(request):
 	template_path = "Days/solstices-in-n-years-with-sum-attrs-odd-number.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
