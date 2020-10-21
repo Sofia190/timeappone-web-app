@@ -1,0 +1,34 @@
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+					<p>Result: </p>
+
+                    <p>USA Time: {{obj.first_date_time_var_diff}}</p>
+
+                    <p>Your time: {{obj.second_date_time_var_diff}}</p>
+
+                     <p>Days: {{obj.timezone_diff_days}}</p>
+
+                    <p>Minutes: {{obj.timezone_diff_minutes}}</p>
+
+
+                    </div>
+                </div>
+     </div>

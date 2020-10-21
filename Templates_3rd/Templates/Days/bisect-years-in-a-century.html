@@ -1,0 +1,76 @@
+
+{% load mathfilters %}
+
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+
+                    {% if obj.second_year_of_century|sub:obj.first_year_of_century != 100 %}
+
+                        <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+                    <p>Days: {{obj.days_in_a_century}}</p>
+
+
+					<p>Result: {{obj.bisect_years_in_century}}</p>
+
+                    <p>Years: {{obj.bisect_years_count_in_century}}</p>
+
+
+
+
+                    </div>
+                </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

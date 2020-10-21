@@ -1,0 +1,75 @@
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+				
+
+					 {% if obj.date_for_years_with_attributes_equal_to_a_value_result %}
+
+					<p>Good year: {{obj.date_for_years_with_attributes_equal_to_a_value_result}}</p>
+
+					{% else %}
+
+					<p>Result: </p>
+
+					<p>{{obj.attributes_sum}}</p>
+
+					{% endif %}
+
+
+                    </div>
+                </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
