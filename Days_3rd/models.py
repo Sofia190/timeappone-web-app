@@ -199,7 +199,6 @@ class Day(models.Model):
 
 
 
-
 	first_year_in_a_century_sum_attributes = models.IntegerField(default=0)
 
 	second_year_in_a_century_sum_attributes = models.IntegerField(default=0)
@@ -262,7 +261,6 @@ class Day(models.Model):
 	
 
 	n_days_attributes_result = models.TextField(default=0)
-
 
 
 
