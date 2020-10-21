@@ -184,21 +184,7 @@ urlpatterns = [
 
       path('set-season/', set_season, name="set_season"),
 
-      path('determine-most-visible-periods-seasons/', determine_most_visible_periods_seasons, name="determine_most_visible_periods_seasons"),
-
-
-
-
-
-
-
-]
-
-
-
-
-
-
+      path('determine-most-visible-periods-seasons/', determine_most_visible_periods_seasons, name="determine_most_visible_periods_seasons"),]
 
 
 
