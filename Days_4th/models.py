@@ -53,7 +53,6 @@ class DayQuerySet(models.query.QuerySet):
 
 
 
-
 class DayModelManager(models.Manager):
 
 
@@ -125,7 +124,6 @@ class Day(models.Model):
 	days_until_next_spring_equinox = models.IntegerField(default=0)
 
 
-
 	first_date_next_autumn_equinox = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	second_date_next_autumn_equinox = models.DateField(auto_now=False, auto_now_add=False, default=date(2021,9,22))
 	months_until_next_autumn_equinox = models.IntegerField(default=0)
@@ -137,6 +135,7 @@ class Day(models.Model):
 	months_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
 	minutes_between_dates_with_total_lunar_eclipse = models.IntegerField(default=0)
 
+	
 	inTimeDelta_hours = models.IntegerField(default=0)
 	inTZObject_name = models.CharField(max_length=70, default='EDT')
 	datetime_instance_var = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now)
@@ -153,7 +152,6 @@ class Day(models.Model):
 	timezone_diff_days= models.IntegerField(default=0)
 	timezone_diff_minutes = models.IntegerField(default=0)
 
-
 	inTZObject_name_field = models.ManyToManyField(Name)
 	inTZObject_name_diff_filed = models.ManyToManyField(NameModel)
 
@@ -167,6 +165,7 @@ class Day(models.Model):
 
 	# diff_in_hours_with_local_time = models.IntegerField(default=0)
 
+	
 
 	used_in_calculations_by_user = models.BooleanField(default=False)
 
@@ -315,10 +314,8 @@ class Day(models.Model):
 	date_one_calendar = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 	date_two_calendar = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
 
-
 	month_one_date_one_calendar = models.IntegerField(default=0)
 	month_two_date_two_calendar = models.IntegerField(default=0)
-
 
 	day_one_date_two_calendar = models.IntegerField(default=0)
 	day_two_date_two_calendar = models.IntegerField(default=0)
