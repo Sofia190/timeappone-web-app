@@ -248,7 +248,6 @@ def view_years_with_equal_sum_of_attributes_to_a_value(request):
 
 
 
-
 def view_leap_years_in_a_decade(request):
 
 
@@ -406,6 +405,7 @@ def view_leap_years_in_a_century(request):
 	template_path = "Days/bisect-years-in-a-century.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -604,6 +604,7 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
 
     
 
+	
 
 
 def how_many_months_and_days_till_the_next_autumn_equinox(request):
@@ -1814,7 +1815,6 @@ def find_time_until_a_date_after_n_years(request):
 
 
 
-
 def calculate_date_and_time_until_next_solstice(request):
 
 
@@ -2287,7 +2287,6 @@ def how_many_solstices_in_n_years_with_sum_attrs_odd_number(request):
 
 
 
-
 def view_calendar(request):
 
 
@@ -2571,6 +2570,7 @@ def  create_the_DaysInSearchEngine_17(request):
 
 
 
+
 def  create_the_DaysInSearchEngine_712(request):
 
 
@@ -2681,7 +2681,6 @@ def  delete_the_DaysInSearchEngine(request):
 	return render(request, template_path, {'form': form})
 
 			
-
 
 
 
@@ -3299,7 +3298,6 @@ def determine_most_visible_periods_seasons(request):
 
 			for item in qs1:
 
-				# print("str")
 
 				print(item.ascension+item.declination)
 
