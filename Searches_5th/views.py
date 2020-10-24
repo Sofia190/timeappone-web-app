@@ -12,8 +12,6 @@ from Days.models import DaysInSearchEngine
 
 
 
-
-
 def search_view(request):
 	query = request.GET.get('q', None)
 	user = None 
