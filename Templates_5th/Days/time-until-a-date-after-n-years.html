@@ -1,0 +1,44 @@
+{% load mathfilters %}
+
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+
+              {% if not obj.nth_day_time_until  <= 30%}
+
+                    <p>Choose a valid interval</p>
+
+              {% endif %}
+
+     
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+                    <p>{{obj.first_date_time_until}}</p>
+
+                    <p>{{obj.second_date_time_until}}</p>
+
+                    <p>Days: {{obj.days_until_result}}</p>
+
+                    <p>{{obj.time_until_result}}</p>
+
+
+              
+
+                    </div>
+                </div>
+     </div>

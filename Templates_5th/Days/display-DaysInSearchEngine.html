@@ -1,0 +1,39 @@
+
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+
+
+					<p>{{obj.date_field}}</p>
+
+                    {% if obj.spring_equinox == True %}
+
+                    <p>Spring equinox </p>
+
+                    {% elif obj.autumn_equinox == True %}
+
+                    <p>Autumn equinox  </p>
+
+                    {% elif obj.summer_solstice == True %}
+
+                    <p> Summer solstice  </p>
+
+                    {% elif obj.winter_solstice == True %}
+
+                    <p>Winter solstice </p>
+
+                    {% endif %}
+
+                     <p> Season: {{obj.season}} </p>
+
+                    <p>Most visible stars: {{obj.most_visible_periods_seasons}}</p>
+
+                    <p>Stars movement: {{obj.stars_movement}}</p>
+
+
+                    </div>
+                </div>
+     </div>

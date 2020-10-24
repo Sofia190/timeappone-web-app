@@ -1,0 +1,70 @@
+
+{% load mathfilters %}
+
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+        
+        {% if not obj.second_year_in_a_decade_sum_attributes|sub:obj.first_year_in_a_decade_sum_attributes == 10 %} 
+
+              <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+        {% if not obj.month_sum_attributes >= 1 %}
+
+              <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+           {% if not obj.month_sum_attributes <= 12  %}
+
+
+              <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+
+        {% if not obj.day_sum_attributes >= 1 %}
+           <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+        {% if not obj.day_sum_attributes <= 30 %}  
+
+           <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+                    <p>{{obj.dates_sum_attributes_result}}</p>
+
+
+              
+
+                    </div>
+                </div>
+     </div>

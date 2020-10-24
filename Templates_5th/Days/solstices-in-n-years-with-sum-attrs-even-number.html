@@ -1,0 +1,60 @@
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+
+                    {% if not obj.first_year_solstice_even_sum > 0 %}
+
+                    <p>Choose a valid interval</p>
+
+
+                    {% endif %}
+
+
+                    {% if not obj.second_year_solstice_even_sum > 0 %}
+
+                    <p>Choose a valid interval </p>
+
+
+
+                    {% endif %}
+
+
+
+
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+                    <p>Summer solstices with even sum of attributes</p>
+                    <p>{{obj.ssolsticel_even_sum}}</p>
+                    <p>Count: {{obj.ssolsticel_even_sum_count}}</p>
+                    
+
+                    <p>Winter solstices with even sum of attributes:</p>
+                    <p>{{obj.wsolsticel_even_sum}}</p>
+                    <p>Count: {{obj.wsolsticel_even_sum_count}}</p>
+                    
+
+                    <p>Solstices with even sum of attributes</p>
+					<p>{{obj.solsticel_even_sum}}</p>
+                     <p>Count: {{obj.solsticel_even_sum_count}}</p>
+                     <br>
+
+
+
+                    </div>
+                </div>
+     </div>
+

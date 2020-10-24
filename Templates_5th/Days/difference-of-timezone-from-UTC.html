@@ -1,0 +1,33 @@
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' name="address" class='btn-btn-default'>Submit data</button>
+
+
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+					<p>Difference from UTC: {{obj.inTimeDelta_hours}}</p>
+
+                    <p>Current time: {{obj.first_date_time_var}}</p>
+
+                    <p>Time searched: {{obj.second_date_time_var}}</p>
+
+
+
+                    </div>
+                </div>
+     </div>

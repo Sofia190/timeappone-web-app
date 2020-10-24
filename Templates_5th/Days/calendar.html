@@ -1,0 +1,74 @@
+
+{% load mathfilters %}
+
+
+
+
+<form method="POST">{% csrf_token %}
+
+	{{ form.as_p}}
+
+<button type='submit' class='btn-btn-default'>Submit</button>
+
+</form>
+
+{% include 'base/css.html' %}
+	<div class='row'>
+                <div class='col-12'>
+                    <div class="alert alert-primary" role="alert">
+<!-- 
+        {% if not obj.month_for_date_n_days >= 1 %} 
+
+              <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+        {% if not obj.month_for_date_n_days <= 12 %}
+
+
+              <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+        {% if not obj.n_days >= 1  %}  
+
+           <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+        {% if not obj.n_days <= 30 %}
+
+          <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+
+
+
+
+         {% if not obj.year_for_date_n_days > 1 %}
+
+           <h6>Choose a valid interval </h6>
+
+                    {% endif %}
+ -->
+
+                  
+
+
+                     <p>Last searched: </p>
+
+                    
+					 <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+                    <p>{{obj.date_for_the_next_n_weeks}}</p>
+
+
+              
+
+                    </div>
+                </div>
+     </div>
