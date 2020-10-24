@@ -12,8 +12,6 @@ from django.db.models import Q
 
 
 
-
-
 class Name(models.Model):
 
 
