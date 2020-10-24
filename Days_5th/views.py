@@ -406,7 +406,6 @@ def view_leap_years_in_a_century(request):
 
 
 
-
    	
 
 def view_sum_of_attributes_of_nth_day_in_a_year(request):
@@ -469,6 +468,7 @@ def view_sum_of_attributes_of_nth_day_in_a_year(request):
 	template_path = "Days/sum-of-attributes-of-nth-day.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
+
 
 
 
@@ -962,7 +962,6 @@ def find_equivalent_with_timezone(request):
 
 			form =  Find_equivalent_with_timezone_Form()
 
-			# return render(request, "Days/days-till-a-date.html")
 	else:
 
 		form =  Find_equivalent_with_timezone_Form()
@@ -1312,7 +1311,7 @@ def find_difference_between_two_timezones(request):
 					obj.inTimeDelta_hours_to_search = 12
 
 
-
+					
 
 
 			print(latitude_longitude)
@@ -1801,7 +1800,6 @@ def find_time_until_a_date_after_n_years(request):
 	template_path = "Days/time-until-a-date-after-n-years.html"
 
 	return render(request, template_path, {'form': form, "obj":obj, })
-
 
 
 
@@ -2555,6 +2553,7 @@ def  create_the_DaysInSearchEngine_17(request):
 
 	
 	return render(request, template_path, {'form': form})
+
 
 
 
