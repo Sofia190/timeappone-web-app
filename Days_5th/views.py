@@ -3006,7 +3006,7 @@ def determine_most_visible_periods(request):
 
 
 				elif (item.ascension+item.declination  >= -14.13 
-				and item.ascension+item.declination <= 14.12):
+				and item.ascension+item.declination <= -14.12):
 
 					print(item.name)
 
