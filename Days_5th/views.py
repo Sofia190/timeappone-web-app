@@ -601,6 +601,8 @@ def how_many_months_and_days_till_the_next_spring_equinox(request):
     
 
 
+	
+	
 
 def how_many_months_and_days_till_the_next_autumn_equinox(request):
 
@@ -2410,7 +2412,6 @@ def view_calendar(request):
 					if i != obj.date_two_calendar.year:
 
 					    for m in range(1, 13):
-					    # for m in range(obj.date_one_calendar.month, obj.date_two_calendar.month+1):
 					        if m==4 or m==6 or m==9 or m==11:
 					            for j in range(1, 31):
 					                dtl.append(date(i, m, j))
@@ -2508,7 +2509,7 @@ def  create_the_DaysInSearchEngine_17(request):
 			obj = DaysInSearchEngine.objects.last()
 
 
-			for i in range(obj.year_one_period, obj.year_two_period):  #2101  2201
+			for i in range(obj.year_one_period, obj.year_two_period):  
 			    for m in range(1, 7):
 			        if m==4 or m==6 or m==9 or m==11:
 			            for j in range(1, 31):
@@ -2573,7 +2574,7 @@ def  create_the_DaysInSearchEngine_712(request):
 			obj = DaysInSearchEngine.objects.last()
 
 
-			for i in range(obj.year_one_period, obj.year_two_period):  #2101  2201
+			for i in range(obj.year_one_period, obj.year_two_period): 
 			    for m in range(7, 13):
 			        if m==4 or m==6 or m==9 or m==11:
 			            for j in range(1, 31):
@@ -2643,7 +2644,7 @@ def  delete_the_DaysInSearchEngine(request):
 
 
 				if (i.year_one_period == obj.year_one_period or
-				i.year_two_period == obj.year_two_period):  #2101  2201
+				i.year_two_period == obj.year_two_period): 
 
 				    i.delete()
 
@@ -2964,7 +2965,7 @@ def determine_most_visible_periods(request):
 
 
 				elif (item.ascension+item.declination  >= -1.29 and 
-				 item.ascension+item.declination <= -0.07 ):
+				 item.ascension+item.declination <= 11.2 ):
 
 					print(item.name)
 
@@ -3088,8 +3089,8 @@ def determine_most_visible_periods(request):
 						i.save()
 
 
-				elif (item.ascension+item.declination >=-9.2 and 
-				item.ascension+item.declination <= -1.44):
+				elif (item.ascension+item.declination >= -9.2 and 
+				item.ascension+item.declination <= -1.34):
 
 					print(item.name)
 
@@ -3187,6 +3188,19 @@ def determine_most_visible_periods(request):
 					for i in qs:
 
 						i.most_visible_periods += item.name + " : " + "december-august"+ ", "
+			
+						i.save()
+				
+				
+				
+				elif (item.ascension+item.declination >= -14.25 and 
+					item.ascension+item.declination <= -14.25):
+
+					print(item.name)
+
+					for i in qs:
+
+						i.most_visible_periods += item.name + " : " + "november-february"+ ", "
 			
 						i.save()
 
@@ -3473,7 +3487,7 @@ def determine_most_visible_periods_seasons(request):
 
 
 				elif (item.ascension+item.declination  >= -1.29 and 
-				 item.ascension+item.declination <= -0.07 ):
+				 item.ascension+item.declination <= 11.2 ):
 
 					print(item.name)
 
@@ -3640,7 +3654,7 @@ def determine_most_visible_periods_seasons(request):
 
 
 				elif (item.ascension+item.declination >=-9.2 and 
-				item.ascension+item.declination <= -1.44):
+				item.ascension+item.declination <= -1.34):
 
 					print(item.name)
 
@@ -3778,6 +3792,23 @@ def determine_most_visible_periods_seasons(request):
 						 or i.date_field.month == 4 or i.date_field.month == 5
 						  or i.date_field.month == 6 or i.date_field.month == 7 or 
 						i.date_field.month == 8 ):
+			
+
+							i.most_visible_periods_seasons += item.name + ", "
+			
+						i.save()
+				
+				
+				
+				elif (item.ascension+item.declination >= -14.25 and 
+					item.ascension+item.declination <= -14.25):
+
+					print(item.name)
+
+					for i in qs:
+
+						if (i.date_field.month == 11 or i.date_field.month == 12
+						 or i.date_field.month == 1 or i.date_field.month == 2 ):
 			
 
 							i.most_visible_periods_seasons += item.name + ", "
